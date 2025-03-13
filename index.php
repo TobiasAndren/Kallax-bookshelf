@@ -28,21 +28,22 @@ if (isset($_GET['sort'])) {
 </head>
 
 <body>
-    <input class="search" id="search" type="text" placeholder="Search..">
-    <ul class="bookshelf" aria-label="bookshelf">
-    <select name="sort" id="sort">
-        <option value="ascTitle">Sort by title ASC</option>
-        <option value="descTitle">Sort by title DESC</option>
-        <option value="ascAuthor">Sort by author ASC</option>
-        <option value="descAuthor">Sort by author DESC</option>
-    </select>
-    <section aria-label="bookshelf">
-
-        <?php foreach ($bookshelf as $book) { ?>
-            <li><?= $book['title'] . ' - ' . $book['author'] ?></li>
-        <?php
-        } ?>
-    </ul>
+    <header>
+        <input class="search" id="search" type="text" placeholder="Search..">
+        <select name="sort" id="sort">
+            <option value="ascTitle">Sort by title ASC</option>
+            <option value="descTitle">Sort by title DESC</option>
+            <option value="ascAuthor">Sort by author ASC</option>
+            <option value="descAuthor">Sort by author DESC</option>
+        </select>
+    </header>
+    <section class="bookshelf-container" aria-label="bookshelf container">
+        <ul class="bookshelf" aria-label="bookshelf">
+            <?php foreach ($bookshelf as $book) { ?>
+                <li><?= $book['title'] . ' - ' . $book['author'] ?></li>
+            <?php
+            } ?>
+        </ul>
     </section>
     <script>
         document.getElementById('sort').addEventListener('change', function() {
