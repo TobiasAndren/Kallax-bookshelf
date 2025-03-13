@@ -1,6 +1,6 @@
 <?php
 
-
+include __DIR__ . "/books.php";
 
 ?>
 <!DOCTYPE html>
@@ -13,7 +13,12 @@
 </head>
 
 <body>
-
+    <section aria-label="bookshelf">
+        <?php foreach ($bookshelf as $book) { ?>
+            <li><?= $book['title'] ?></li>
+        <?php
+        } ?>
+    </section>
 </body>
 
 </html>
