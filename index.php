@@ -27,6 +27,7 @@ if (isset($_GET['sort'])) {
 </head>
 
 <body>
+    <input class="search" id="search" type="text" placeholder="Search..">
     <select name="sort" id="sort">
         <option value="ascTitle">Sort by title ASC</option>
         <option value="descTitle">Sort by title DESC</option>
