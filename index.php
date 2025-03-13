@@ -24,10 +24,12 @@ if (isset($_GET['sort'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kallax Bookshelf</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
     <input class="search" id="search" type="text" placeholder="Search..">
+    <ul class="bookshelf" aria-label="bookshelf">
     <select name="sort" id="sort">
         <option value="ascTitle">Sort by title ASC</option>
         <option value="descTitle">Sort by title DESC</option>
@@ -35,10 +37,12 @@ if (isset($_GET['sort'])) {
         <option value="descAuthor">Sort by author DESC</option>
     </select>
     <section aria-label="bookshelf">
+
         <?php foreach ($bookshelf as $book) { ?>
             <li><?= $book['title'] . ' - ' . $book['author'] ?></li>
         <?php
         } ?>
+    </ul>
     </section>
     <script>
         document.getElementById('sort').addEventListener('change', function() {
